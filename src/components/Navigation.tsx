@@ -29,6 +29,14 @@ export default function Navigation() {
           <a className="text-vertical font-nav-caps text-primary/60 hover:text-primary transition-colors uppercase" href="#contact">Contact</a>
         </nav>
         <div className="flex flex-col items-center gap-6">
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); document.getElementById("hero-book-btn")?.click(); }}
+            className="text-vertical font-nav-caps text-secondary uppercase tracking-[0.2em] hover:text-secondary/70 transition-colors border-r-2 border-secondary pr-1 text-xs"
+            title="Book Now"
+          >
+            Book
+          </a>
           <span
             onClick={() => setIsSearchOpen(true)}
             className="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors"

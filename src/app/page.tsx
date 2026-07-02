@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import BookingModal from "@/components/BookingModal";
+import FloatingBookingBar from "@/components/FloatingBookingBar";
 
 const testimonials = [
   {
@@ -27,6 +29,13 @@ const testimonials = [
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [preselectedVilla, setPreselectedVilla] = useState("");
+
+  const openBooking = (villaId = "") => {
+    setPreselectedVilla(villaId);
+    setIsBookingOpen(true);
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
@@ -98,18 +107,19 @@ export default function Home() {
             Nestled in the lush highlands of Bali, Aura Villa is an intimate resort crafted for couples — where privacy, romance, and the island's natural beauty intertwine.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6 opacity-0 animate-[fadeIn_1s_ease-out_1.1s_forwards]">
-            <a
-              href="#villas"
+            <button
+              id="hero-book-btn"
+              onClick={() => openBooking()}
               className="group cursor-pointer flex items-center gap-4"
             >
-              <span className="font-nav-caps text-secondary-fixed-dim uppercase tracking-widest border-b border-transparent group-hover:border-secondary-fixed-dim transition-all">Explore Our Villas</span>
+              <span className="font-nav-caps text-secondary-fixed-dim uppercase tracking-widest border-b border-transparent group-hover:border-secondary-fixed-dim transition-all">Book Your Stay</span>
               <span className="material-symbols-outlined text-secondary-fixed-dim group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-            </a>
+            </button>
             <a
-              href="#contact"
+              href="#villas"
               className="font-nav-caps text-primary/50 uppercase tracking-widest text-xs hover:text-primary transition-colors"
             >
-              Book Direct via WhatsApp
+              Explore Our Villas
             </a>
           </div>
         </div>
@@ -213,7 +223,11 @@ export default function Home() {
           className="flex gap-12 overflow-x-auto no-scrollbar snap-x snap-mandatory px-margin-mobile md:px-margin-desktop"
         >
           {/* Villa 1: Aura Garden Suite */}
-          <div className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+          <div
+            id="villa-card-garden-suite"
+            className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer"
+            onClick={() => openBooking("garden-suite")}
+          >
             <div className="aspect-video overflow-hidden relative shadow-lg">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -230,12 +244,16 @@ export default function Home() {
                 <h4 className="font-headline-sm text-primary mb-1">Aura Garden Suite</h4>
                 <p className="font-label-sm text-on-surface-variant">From IDR 1.500.000 / night</p>
               </div>
-              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Breakfast Incl.</span>
+              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase group-hover:bg-secondary-fixed-dim group-hover:text-primary transition-all">Book Now →</span>
             </div>
           </div>
 
           {/* Villa 2: Aura Pool Villa */}
-          <div className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+          <div
+            id="villa-card-pool-villa"
+            className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer"
+            onClick={() => openBooking("pool-villa")}
+          >
             <div className="aspect-video overflow-hidden relative shadow-lg">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -252,12 +270,16 @@ export default function Home() {
                 <h4 className="font-headline-sm text-primary mb-1">Aura Pool Villa</h4>
                 <p className="font-label-sm text-on-surface-variant">From IDR 3.500.000 / night</p>
               </div>
-              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Private Pool</span>
+              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase group-hover:bg-secondary-fixed-dim group-hover:text-primary transition-all">Book Now →</span>
             </div>
           </div>
 
           {/* Villa 3: Aura Cliff Suite */}
-          <div className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+          <div
+            id="villa-card-cliff-suite"
+            className="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer"
+            onClick={() => openBooking("cliff-suite")}
+          >
             <div className="aspect-video overflow-hidden relative shadow-lg">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -274,7 +296,7 @@ export default function Home() {
                 <h4 className="font-headline-sm text-primary mb-1">Aura Cliff Suite</h4>
                 <p className="font-label-sm text-on-surface-variant">From IDR 5.000.000 / night</p>
               </div>
-              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Honeymoon Pkg</span>
+              <span className="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase group-hover:bg-secondary-fixed-dim group-hover:text-primary transition-all">Book Now →</span>
             </div>
           </div>
         </div>
@@ -527,6 +549,16 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ── Booking Modal ── */}
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        preselectedVilla={preselectedVilla}
+      />
+
+      {/* ── Floating Booking Bar ── */}
+      <FloatingBookingBar onBook={() => openBooking()} />
     </>
   );
 }
