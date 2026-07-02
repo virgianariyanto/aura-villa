@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
@@ -475,8 +476,14 @@ export default function Home() {
         <div className="max-w-container-max mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div className="max-w-xs">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="material-symbols-outlined text-2xl text-surface-variant" style={{ fontVariationSettings: "'FILL' 1" }}>villa</span>
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/Aura-Villas.png"
+                  alt="Aura Villas Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain invert brightness-0 invert opacity-60"
+                />
                 <h4 className="font-headline-sm text-surface">Aura Villa Bali</h4>
               </div>
               <p className="font-body-md text-surface-variant leading-relaxed">
@@ -506,8 +513,14 @@ export default function Home() {
           </div>
           <div className="mt-24 pt-12 border-t border-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="font-label-sm text-surface-variant">© 2024 Aura Villa Bali. All rights reserved.</p>
-            <div className="flex gap-8">
-              <span className="material-symbols-outlined text-surface-variant" style={{ fontVariationSettings: "'FILL' 1" }}>villa</span>
+            <div className="flex gap-8 items-center">
+              <Image
+                src="/Aura-Villas.png"
+                alt="Aura Villas"
+                width={24}
+                height={24}
+                className="object-contain opacity-40"
+              />
               <span className="material-symbols-outlined text-surface-variant">public</span>
               <span className="material-symbols-outlined text-surface-variant">favorite</span>
             </div>

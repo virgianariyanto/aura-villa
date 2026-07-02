@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -11,9 +12,16 @@ export default function Navigation() {
     <>
       {/* Sidebar Navigation Shell (Desktop) */}
       <aside className="fixed left-0 top-0 h-full w-[80px] bg-surface z-[100] hidden md:flex flex-col items-center justify-between py-12 border-r border-surface-container-high">
-        <div className="font-headline-sm text-primary tracking-tighter hover:rotate-180 transition-transform duration-700 cursor-pointer">
-          <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>villa</span>
-        </div>
+        {/* Logo */}
+        <a href="/" className="block">
+          <Image
+            src="/Aura-Villas.png"
+            alt="Aura Villas Logo"
+            width={48}
+            height={48}
+            className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+          />
+        </a>
         <nav className="flex flex-col gap-12 items-center">
           <a className="text-vertical font-nav-caps text-primary hover:text-secondary transition-colors tracking-[0.2em] uppercase" href="#villas">Villas</a>
           <a className="text-vertical font-nav-caps text-primary border-r-2 border-secondary pr-1 font-bold uppercase" href="#facilities">Facilities</a>
@@ -38,10 +46,16 @@ export default function Navigation() {
 
       {/* Top Navigation (Mobile) */}
       <header className="md:hidden fixed top-0 w-full bg-surface/90 backdrop-blur-md z-[100] px-margin-mobile py-6 flex justify-between items-center border-b border-outline-variant/10">
-        <div className="font-headline-sm text-primary flex items-center gap-1.5">
-          <span className="material-symbols-outlined text-2xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>villa</span>
-          Aura Villa
-        </div>
+        <a href="/" className="flex items-center gap-2">
+          <Image
+            src="/Aura-Villas.png"
+            alt="Aura Villas Logo"
+            width={36}
+            height={36}
+            className="object-contain"
+          />
+          <span className="font-headline-sm text-primary">Aura Villas</span>
+        </a>
         <div className="flex items-center gap-4">
           <span
             onClick={() => setIsSearchOpen(true)}
@@ -105,9 +119,15 @@ export default function Navigation() {
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <span className="font-display-lg text-[180px] leading-none select-none text-primary">AURA</span>
             </div>
-            <div className="font-headline-sm text-primary flex items-center gap-2">
-              <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>villa</span>
-              Aura Villa Bali
+            <div className="flex items-center gap-2">
+              <Image
+                src="/Aura-Villas.png"
+                alt="Aura Villas Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <span className="font-headline-sm text-primary">Aura Villa Bali</span>
             </div>
             <div className="max-w-md z-10">
               <h3 className="font-display-lg text-4xl text-primary leading-tight mb-6">Where Love Finds Its Home.</h3>
@@ -157,7 +177,7 @@ export default function Navigation() {
                 <a href="#" className="hover:text-white transition-colors">WhatsApp</a>
                 <a href="#" className="hover:text-white transition-colors">TripAdvisor</a>
               </div>
-              <span className="material-symbols-outlined">villa</span>
+              <span className="material-symbols-outlined">home</span>
             </div>
           </div>
         </div>
