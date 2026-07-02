@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verdant Retreats | The Art of Living</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dcdad5",
+                        "surface-container": "#f0ede9",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#5e4105",
+                        "surface-bright": "#fcf9f4",
+                        "primary-fixed-dim": "#b7cdaf",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-primary-fixed-variant": "#394c35",
+                        "on-surface": "#1c1c19",
+                        "inverse-primary": "#b7cdaf",
+                        "inverse-on-surface": "#f3f0eb",
+                        "on-tertiary-fixed": "#271900",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe8e3",
+                        "secondary-container": "#ffd2a7",
+                        "primary-container": "#4a5d45",
+                        "inverse-surface": "#31302d",
+                        "on-background": "#1c1c19",
+                        "secondary": "#795835",
+                        "background": "#fcf9f4",
+                        "primary": "#33452f",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#50644b",
+                        "on-surface-variant": "#444841",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffdeab",
+                        "outline-variant": "#c4c8be",
+                        "on-secondary-container": "#795936",
+                        "tertiary-container": "#725217",
+                        "surface-variant": "#e5e2dd",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary-fixed-dim": "#ebc07a",
+                        "secondary-fixed-dim": "#eabf94",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdcbc",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f6f3ee",
+                        "on-tertiary-container": "#f3c881",
+                        "tertiary": "#573b00",
+                        "on-primary": "#ffffff",
+                        "outline": "#747870",
+                        "on-primary-fixed": "#0f1f0c",
+                        "on-secondary-fixed-variant": "#5e4120",
+                        "primary-fixed": "#d3e9ca",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#bfd5b7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "nav-caps": ["DM Sans"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "label-sm": ["DM Sans"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "nav-caps": ["13px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-vertical { writing-mode: vertical-rl; }
+        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+        .parallax-target { transition: transform 0.1s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-[80px] bg-surface z-[100] hidden md:flex flex-col items-center justify-between py-12 border-r border-surface-container-high">
+<div class="font-headline-sm text-primary tracking-tighter hover:rotate-180 transition-transform duration-700 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<nav class="flex flex-col gap-12 items-center">
+<a class="text-vertical font-nav-caps text-primary hover:text-secondary-fixed-dim transition-colors tracking-[0.2em] uppercase" href="#">Destinations</a>
+<a class="text-vertical font-nav-caps text-primary border-r-2 border-secondary-fixed-dim pr-1 font-bold uppercase" href="#">Villas</a>
+<a class="text-vertical font-nav-caps text-primary/60 hover:text-primary transition-colors uppercase" href="#">Experiences</a>
+<a class="text-vertical font-nav-caps text-primary/60 hover:text-primary transition-colors uppercase" href="#">Concierge</a>
+</nav>
+<div class="flex flex-col items-center gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</aside>
+<!-- Top Navigation (Mobile) -->
+<header class="md:hidden fixed top-0 w-full bg-surface/90 backdrop-blur-md z-[100] px-margin-mobile py-6 flex justify-between items-center">
+<div class="font-headline-sm text-primary">Verdant</div>
+<span class="material-symbols-outlined text-primary">menu</span>
+</header>
+<main class="md:ml-[80px]">
+<!-- Hero Section: Editorial Layout -->
+<section class="min-h-screen relative flex flex-col md:flex-row items-center justify-center pt-24 md:pt-0 overflow-hidden">
+<div class="w-full md:w-1/2 h-full px-margin-mobile md:px-margin-desktop z-10 flex flex-col justify-center items-start">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-[0.9] max-w-xl relative">
+<span class="block translate-x-[-5%] mb-4 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">The Art of</span>
+<span class="block md:ml-24 italic opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]">Living Well.</span>
+</h1>
+<p class="mt-12 font-body-lg text-on-surface-variant max-w-sm opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+                    Architecture that breathes, landscapes that listen. Verdant Retreats is a curated collection of sanctuaries where the line between indoor and wild dissolves.
+                </p>
+<div class="mt-12 group cursor-pointer flex items-center gap-4 opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards]">
+<span class="font-nav-caps text-secondary-fixed-dim uppercase tracking-widest border-b border-transparent group-hover:border-secondary-fixed-dim transition-all">Explore the Collection</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+</div>
+<!-- Asymmetrical Image Grid -->
+<div class="w-full md:w-1/2 h-[600px] md:h-screen relative mt-12 md:mt-0 p-8 md:p-24 flex items-center justify-center">
+<div class="absolute inset-0 bg-surface-container-low/50 -z-10 rotate-[-2deg] scale-95"></div>
+<div class="relative w-full h-full max-w-md">
+<!-- Main Vertical Image -->
+<div class="w-full h-full shadow-2xl relative overflow-hidden" style="clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);">
+<img class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" data-alt="A cinematic, high-fashion editorial photograph of a minimalist tropical villa exterior at dusk. The architecture features clean horizontal lines and floor-to-ceiling glass, reflecting the warm orange hues of the setting sun. Lush, deep-green jungle foliage surrounds the structure, providing a sense of secluded exclusivity. The lighting is soft and ambient, creating a serene, luxurious atmosphere with a primary color palette of deep sage and warm ivory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfz85Sw7-EfR_4aoancZxFYl0dIwf3rLGuLvanlMcV3LyWhPd4auPF1pFosm39L-X4zvK-j1-l2IR-_8b0ZQPoW-nhhsgQgp6kk6-XZ-VxRu7HSjQmvMJAOYstySJKDpPlw7JsL7UmmdA9h3Fp4Yyv6Vj0DaqaisG_nmXTHXom0iXdkel0MM9YkGwmmcW4egQPv3tJ3gFETlvlYl7QGMQp7ukSIWXl5PoDZkexl7CZf-To7B9rlOM"/>
+</div>
+<!-- Overlapping Detail -->
+<div class="absolute -bottom-10 -right-10 w-48 h-64 bg-surface shadow-xl p-2 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photography of natural limestone architectural details and organic wood textures in a luxury retreat. Sunlight filters through a slatted bamboo screen, creating dramatic geometric shadows across the warm, sand-colored surfaces. The mood is tactile and earthy, emphasizing the high-end craftsmanship and organic materials of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN8sZLzZg4voiFlkmtxloAL7NO245qM0osZCguukcHMnR2Q4JUz4JMBZXjFzvMHDCAaRb8_5p3L3xLYywaq_xqGHe-Oe80lwUX8U85i67RlQnHugFdYScGK-Q8ByRbs760JPFvIF0YzBsh_0NDGe4tS_4BJspvZoW_ivitGzRldTTIw3e9NeSkIWrA-GtpaM1ywMzxtsyvfHJXcJHYHP-C7Qs87XdUk8nQCCjCs1YzDTP28eLl55M"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The "Vibe" Section: Text Blocks & Floating Elements -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-primary-container text-on-primary-container relative">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter items-center">
+<div class="md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-surface-container-low mb-8 leading-tight">
+                        A Sanctuary of <br/><span class="italic font-light">Silent Luxury</span>
+</h2>
+<p class="font-body-md text-on-primary-container/80 mb-12">
+                        We don't just host; we orchestrate silence. Every villa in our retreat portfolio is chosen for its acoustic harmony and visual stillness.
+                    </p>
+<a class="inline-flex items-center gap-4 text-on-tertiary-container hover:text-white transition-colors uppercase font-nav-caps tracking-[0.2em] group" href="#">
+                        Read Our Story
+                        <span class="w-12 h-px bg-on-tertiary-container group-hover:w-24 transition-all"></span>
+</a>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 gap-8 mt-12 md:mt-0">
+<div class="pt-24">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="An artistic high-angle shot of a serene infinity pool overlooking a misty tropical valley. The water surface is perfectly still, reflecting the morning sky's soft lavender and gold tones. Elegant, minimalist lounge chairs made of light teak are arranged carefully on the stone terrace. The aesthetic is unhurried, minimalist luxury, captured in a soft-focus magazine style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjczFldoGcpqgcu81fIAhOU2cduhulRY_qlBPyDFa2xoYzl2bm_5lD36avDvRok9YoeTSrjn8Xhju0zd4AaFi94eV8kTxtsq52kIoj0AFlk75LoieXeKLOlyd0VnKf2Auutz3AazTLxFzlcz1PScQAKr2gQI4OMgayIhaL9I0WRtnMZjwsQYRw7zN13ucQM1k5kxJzJuUnmQO5I_KEVdHo8iiVX1zq5TECWzPfa2jLJ0j4UgYVO7s"/>
+</div>
+</div>
+<div>
+<div class="aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="An interior shot of a minimalist dining area in a luxury villa. A large rough-hewn wooden table is set with organic ceramic tableware in earth tones. Large floor-to-ceiling windows open directly onto a verdant private garden with tall palms. The room is flooded with natural daylight, creating a bright, airy, and expensive atmosphere typical of Verdant Retreats." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIcvgZvASJvcBax-_LvsyOzKfAVU-O1JnZPPqzOMWz7l9vC3h9MXtFNOy5nnGUBuiLdZNhYiPjDJCQ6wnomVFHe9IshXxTEPeAgNl7JD50RJUAXK_PqTVrUs7ErtIopLtXi-SK_Za3OnCYgOwCf3br0E7HzvlZwIorYyfmrG3N-34PuT8jplcw99CYEzlpvJf2_xx6bQlYN-yHdgDfBw1aql--cTnM-LpS76AAcOk5ki9R-kZ7JDk"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Large Text -->
+<div class="absolute bottom-0 right-0 opacity-10 pointer-events-none translate-y-1/2">
+<span class="font-display-lg text-[200px] leading-none select-none">VERDANT</span>
+</div>
+</section>
+<!-- Horizontal Villa Gallery (The Slider) -->
+<section class="py-section-gap overflow-hidden bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop mb-16 flex justify-between items-end">
+<div>
+<h3 class="font-nav-caps text-secondary-fixed-dim uppercase tracking-[0.3em] mb-4">Curated Selections</h3>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary">The Signature Collection</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-outline/30 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 border border-outline/30 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="flex gap-12 overflow-x-auto no-scrollbar snap-x snap-mandatory px-margin-mobile md:px-margin-desktop">
+<!-- Villa Item 1 -->
+<div class="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+<div class="aspect-video overflow-hidden relative shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A breathtaking view of an ultra-modern villa cantilevered over a cliffside in Bali. The structure is made of dark volcanic stone and glass, blending seamlessly into the black jagged rocks and lush greenery. The pool appears to spill into the ocean below. High-end architectural photography style, moody yet vibrant, with deep greens and stone greys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDklIGyUROsbHJbahjmIq382aOUq_OUoN4s2yPnn5fmT7KvNSd2EDSqR1yz4ghv1g83Bcse3kwaw2XXYX05J7X5Ev18NlZq7LMthyJd0EVWWobFn_sa1UUCwrT-l8cuteS4lmbt7OBSbdAi8QX3Ydmtp8AFyfhkPtgeEiOJw1SB0d-RVdBtPUD8vzhdy8kHvMig76GjOnH_pcU_UNpJCs2A2Rh25jKZRJsjlU7XjmaFv_Y6B5N2Q_w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-12">
+<span class="font-nav-caps text-white/70 uppercase">Uluwatu, Bali</span>
+<h4 class="font-headline-md text-white">Cliffside Sanctuary</h4>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<h4 class="font-headline-sm text-primary">Villa Alila</h4>
+<span class="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Private Chef</span>
+</div>
+</div>
+<!-- Villa Item 2 -->
+<div class="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+<div class="aspect-video overflow-hidden relative shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A luxury desert oasis villa in Morocco. Earthy terracotta walls, intricate tilework, and a central courtyard featuring a turquoise plunge pool surrounded by exotic cacti and palm trees. The sky is a deep indigo, and soft lantern light glows from the open arches. An elegant blend of traditional craftsmanship and minimalist modern luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC75PW7rmowrct4r5P4n0YMwlcW8D8bcRYmvmVDi_TkgzwlHf0pg4K5oz3oxeN6O_sPe2lIPdF_g6EhzPp-Zwnfuob0RJBCo4mNM1_w15YjJdfD0od8_hCLBBJRGKPC4v8eRmwIw0qE8p7DPvKIdQNdGKEcqDLQLLS7tXFkgqQS4zEEARggbl2E7NzWT3SQ4jEqQu4ErL5-2pCxo4QTuidv8MAn9dmmdL884CcZAVjR2qitM6JE0VA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-12">
+<span class="font-nav-caps text-white/70 uppercase">Marrakech, Morocco</span>
+<h4 class="font-headline-md text-white">Desert Mirage</h4>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<h4 class="font-headline-sm text-primary">Aman Retreat</h4>
+<span class="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Eco-Certified</span>
+</div>
+</div>
+<!-- Villa Item 3 -->
+<div class="min-w-[80vw] md:min-w-[45vw] snap-center group cursor-pointer">
+<div class="aspect-video overflow-hidden relative shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A minimalist lakeside villa in Switzerland during autumn. The building is clad in charred cedar wood with large glass panels reflecting the golden larch forest and the crystal clear lake. The mood is cozy and extremely exclusive, emphasizing solitude and high-end design in a dramatic natural setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDg6vT7RVCcXJm7fPd-ato8DdAmhDW_AUphPpBQRokmVOZ6r208qmsmRxCtvyhwXvoTTJIhY2Ke8LFaOlCe9pV5c1NtogNb6JimObQzveyn-ScfnrBomRWJ_71zlJbdhQF9ayJipbxO8Cup168Mj3USYCr2MzJgyUYRUQjjZPnmijWxTKk8GSSnSd_hIn6BiPVNPOamA7Wpm099HS-fikphYskOqnu3LZM3ijYccylLr5fmIjFLQc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-12">
+<span class="font-nav-caps text-white/70 uppercase">Lucerne, Switzerland</span>
+<h4 class="font-headline-md text-white">Lakeside Monolith</h4>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<h4 class="font-headline-sm text-primary">The Glass House</h4>
+<span class="font-label-sm text-secondary-fixed-dim border border-secondary-fixed-dim px-4 py-1 rounded-full uppercase">Ski-In/Out</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map-First "Destination" Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight mb-12">Found <br/>Elsewhere.</h2>
+<div class="space-y-8">
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<span class="font-nav-caps text-secondary uppercase">01</span>
+<h3 class="font-headline-sm text-primary group-hover:translate-x-4 transition-transform">Southeast Asia</h3>
+<span class="material-symbols-outlined text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+</div>
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<span class="font-nav-caps text-secondary uppercase">02</span>
+<h3 class="font-headline-sm text-primary group-hover:translate-x-4 transition-transform">Mediterranean</h3>
+<span class="material-symbols-outlined text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+</div>
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<span class="font-nav-caps text-secondary uppercase">03</span>
+<h3 class="font-headline-sm text-primary group-hover:translate-x-4 transition-transform">Sub-Saharan</h3>
+<span class="material-symbols-outlined text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 relative">
+<div class="w-full aspect-square bg-surface-container rounded-full flex items-center justify-center p-12 relative">
+<div class="absolute inset-0 border-2 border-dashed border-outline-variant/30 rounded-full animate-[spin_60s_linear_infinite]"></div>
+<div class="w-full h-full relative overflow-hidden rounded-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-inner">
+<!-- Injected Map Image -->
+<img class="w-full h-full object-cover" data-alt="A stylized, minimal satellite map rendering of the Amalfi Coast. The map uses a sophisticated color palette of deep navy, muted sage, and warm sand. No text or labels, just the organic forms of the coastline and the texture of the sea. It looks like a piece of abstract art for a luxury travel brand." data-location="Mediterranean Coast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6ej64shBH2ruwlXuW-qiyXHGnTllcYVcgi0OAby9iWoOKwoLdWf8-YseacdxowKogbFIKwsHGyWexQ5f3QPyiB1zhWyVHJG70xVid3KQM9fbs-4n_iAcQGVUIiFmIvACX3-q1Zf0WSMvwHSZSuM8RIcKR4CxVL-UbAUAoEpfmTNqfqqE1R6xONnEMc0Dpm-2oDDVpWTFITB5b-nS1DlhnnYi8nEjivh54iy937FidQxoMVBdUZyk"/>
+<!-- Floating Dots (Cities) -->
+<div class="absolute top-1/4 left-1/3 w-3 h-3 bg-secondary-fixed-dim rounded-full shadow-[0_0_15px_rgba(234,191,148,0.8)] animate-pulse"></div>
+<div class="absolute bottom-1/2 right-1/4 w-3 h-3 bg-secondary-fixed-dim rounded-full shadow-[0_0_15px_rgba(234,191,148,0.8)] animate-pulse delay-700"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Callout -->
+<section class="bg-surface-container-highest py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="font-nav-caps text-primary uppercase tracking-[0.4em] mb-8">The Journal</h3>
+<h2 class="font-headline-md text-headline-md text-primary mb-12 italic">Join our circle of connoisseurs. Monthly dispatches from the world's most beautiful corners.</h2>
+<form class="relative flex border-b border-primary/20 pb-4 focus-within:border-primary transition-all">
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-lg text-primary placeholder:text-primary/40" placeholder="Your email address" type="email"/>
+<button class="font-nav-caps text-primary uppercase tracking-widest hover:text-secondary transition-colors" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface text-inverse-on-surface py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<h4 class="font-headline-sm text-surface mb-8">Verdant Retreats</h4>
+<p class="font-body-md text-surface-variant leading-relaxed">
+                            A global collective of architects, travelers, and curators dedicated to the pursuit of exceptional living.
+                        </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-tertiary-fixed uppercase">Inquiry</span>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Destinations</a>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Concierge</a>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Bookings</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-tertiary-fixed uppercase">Connect</span>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Instagram</a>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">LinkedIn</a>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Journal</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-tertiary-fixed uppercase">Legal</span>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Privacy</a>
+<a class="font-body-md text-surface-variant hover:text-white" href="#">Terms</a>
+</div>
+</div>
+</div>
+<div class="mt-24 pt-12 border-t border-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-sm text-surface-variant">© 2024 Verdant Retreats. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-surface-variant">eco</span>
+<span class="material-symbols-outlined text-surface-variant">public</span>
+<span class="material-symbols-outlined text-surface-variant">nest_cam_wired_stand</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Parallax Effect for the hero images
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelectorAll('.parallax-target').forEach(el => {
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        // Intersection Observer for fade-in elements
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Simple Fade In Keyframes in Style Tag
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 1s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>
